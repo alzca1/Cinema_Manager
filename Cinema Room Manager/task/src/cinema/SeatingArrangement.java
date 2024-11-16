@@ -38,4 +38,24 @@ public class SeatingArrangement {
             }
         }
     }
+
+    public void calculateSeatingProfit(){
+        int profit = 0;
+        int FRONT_ROW_PRICE = 10;
+        int BACK_ROW_PRICE = 8;
+
+        if(rows * seats <= 60){
+            profit = rows * seats* FRONT_ROW_PRICE;
+        }
+
+        if(rows * seats > 60){
+            int frontRows = rows / 2;
+            int backRows = rows % 2 == 0 ? rows / 2 :  (int) Math.ceil((double) rows / 2);
+
+            profit = (frontRows * seats * FRONT_ROW_PRICE) + (backRows * seats * BACK_ROW_PRICE);
+        }
+
+        System.out.println("Total income:");
+        System.out.printf("$" + profit);
+    }
 }
