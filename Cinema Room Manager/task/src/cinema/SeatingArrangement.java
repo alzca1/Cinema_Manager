@@ -34,7 +34,13 @@ public class SeatingArrangement {
 
     public void bookSeat(int row, int seat) {
         int price = calculateSeatPrice(row, seat);
+        Seat seatToBook = arrangement[row -1][seat - 1];
+        if(seatToBook.getStatus() == 'B'){
+            System.out.println("Seat already booked!");
+            return;
+        }
         arrangement[row - 1][seat - 1] = new Seat('B', price);
+        System.out.println("Ticket price: $" + price);
     }
 
     public void printArrangement() {

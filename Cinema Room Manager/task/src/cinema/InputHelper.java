@@ -15,7 +15,7 @@ public class InputHelper {
         return scanner.nextLine();
     }
 
-    public static void closeScanner(){
+    public  void closeScanner(){
         scanner.close();
     }
 }

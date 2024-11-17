@@ -1,46 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CinemaTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-16T12:01:27" hostname="MacBook-Pro-de-Alvaro-2.local" time="0.037">
+<testsuite name="CinemaTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2024-11-17T20:18:57" hostname="MacBook-Pro-de-Alvaro-2.local" time="0.416">
   <properties/>
-  <testcase name="start" classname="CinemaTests" time="0.037"/>
+  <testcase name="start" classname="CinemaTests" time="0.416">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
 Enter the number of rows:
-> 4
-Enter the number of seats in each row:
-> 5
-Total income:
-?[1;31m
-Start test 2?[0m
-Enter the number of rows:
-> 8
-Enter the number of seats in each row:
-> 9
-Total income:
-Enter the number of rows:
-> 9
-Enter the number of seats in each row:
-> 7
-Total income:
-Enter the number of rows:
 > 7
 Enter the number of seats in each row:
-> 9
-Total income:
-Enter the number of rows:
-> 1
-Enter the number of seats in each row:
-> 1
-Total income:
-Enter the number of rows:
-> 3
-Enter the number of seats in each row:
-> 3
-Total income:
-Enter the number of rows:
 > 8
-Enter the number of seats in each row:
-> 8
-Total income:
+1. Show the seats
+2. Buy a ticket
+0. Exit
+> 0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

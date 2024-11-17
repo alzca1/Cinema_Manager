@@ -1,39 +1,10 @@
 [1;31m
 Start test 1[0m
 Enter the number of rows:
-> 4
-'Enter the number of seats in each row:
-> 5
-Total income:
-[1;31m
-Start test 2[0m
-Enter the number of rows:
-> 8
-'Enter the number of seats in each row:
-> 9
-Total income:
-Enter the number of rows:
-> 9
-'Enter the number of seats in each row:
-> 7
-Total income:
-Enter the number of rows:
 > 7
 'Enter the number of seats in each row:
-> 9
-Total income:
-Enter the number of rows:
-> 1
-'Enter the number of seats in each row:
-> 1
-Total income:
-Enter the number of rows:
-> 3
-'Enter the number of seats in each row:
-> 3
-Total income:
-Enter the number of rows:
 > 8
-'Enter the number of seats in each row:
-> 8
-Total income:
+1. Show the seats
+2. Buy a ticket
+0. Exit
+> 0
