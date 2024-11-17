@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CinemaTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2024-11-17T20:18:57" hostname="MacBook-Pro-de-Alvaro-2.local" time="0.416">
+<testsuite name="CinemaTests" tests="1" skipped="1" failures="0" errors="0" timestamp="2024-11-17T21:25:15" hostname="MacBook-Pro-de-Alvaro-2.local" time="0.419">
   <properties/>
-  <testcase name="start" classname="CinemaTests" time="0.416">
+  <testcase name="start" classname="CinemaTests" time="0.419">
     <skipped/>
   </testcase>
   <system-out><![CDATA[?[1;31m
@@ -12,6 +12,7 @@ Enter the number of seats in each row:
 > 8
 1. Show the seats
 2. Buy a ticket
+3. Statistics
 0. Exit
 > 0
 ]]></system-out>

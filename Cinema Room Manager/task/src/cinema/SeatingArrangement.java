@@ -4,6 +4,9 @@ public class SeatingArrangement {
     private Seat[][] arrangement;
     private int rows;
     private int seats;
+    private int purchasedTickets;
+    private int currentIncome;
+    private int totalIncome;
 
     private final int FRONT_ROW_PRICE = 10;
     private final int BACK_ROW_PRICE = 8;
@@ -12,6 +15,33 @@ public class SeatingArrangement {
         this.rows = rows;
         this.seats = seats;
         arrangement = generateSeatingArrangement();
+        purchasedTickets = 0;
+        currentIncome = 0;
+    }
+
+    public void getStatistics(){
+        String percentageString = String.format("%.2f", (double) (purchasedTickets * 100) / (rows * seats));
+        int total = calculateTotalIncome();
+
+        System.out.println("Number of purchased tickets: " + purchasedTickets);
+        System.out.println("Percentage: " + percentageString + "%");
+        System.out.println("Current income: $" + currentIncome);
+        System.out.println("Total income: $" + total);
+    }
+
+    private int calculateTotalIncome(){
+        int total = 0;
+        if(rows * seats <= 60){
+            total =  rows * seats * 10;
+        }
+
+        if(rows * seats > 60){
+            int frontRowsIncome = (rows / 2) * seats * 10;
+            int backRowsIncome = (rows - (rows/ 2)) * seats * 8;
+
+            total = frontRowsIncome + backRowsIncome;
+        }
+        return total;
     }
 
     public int calculateSeatPrice(int row, int seat) {
@@ -32,14 +62,24 @@ public class SeatingArrangement {
         return price;
     }
 
+    private void addTicketStatistics(int price){
+        purchasedTickets += 1;
+        currentIncome += price;
+    }
+
+
+
     public void bookSeat(int row, int seat) {
-        int price = calculateSeatPrice(row, seat);
         Seat seatToBook = arrangement[row -1][seat - 1];
+
         if(seatToBook.getStatus() == 'B'){
             System.out.println("Seat already booked!");
             return;
         }
+
+        int price = calculateSeatPrice(row, seat);
         arrangement[row - 1][seat - 1] = new Seat('B', price);
+        addTicketStatistics(price);
         System.out.println("Ticket price: $" + price);
     }
 

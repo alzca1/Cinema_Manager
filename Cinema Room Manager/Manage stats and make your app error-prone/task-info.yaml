@@ -6,6 +6,19 @@ files:
   - name: test/CinemaTests.java
     visible: false
     learner_created: false
+  - name: src/cinema/Seat.java
+    visible: true
+    learner_created: true
+  - name: src/cinema/SeatingArrangement.java
+    visible: true
+    learner_created: true
+  - name: src/cinema/InputHelper.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/11109#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sun, 17 Nov 2024 21:25:16 UTC"
 record: -1
