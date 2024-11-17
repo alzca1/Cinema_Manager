@@ -4,28 +4,49 @@ public class Cinema {
 
 
     private final InputHelper inputHelper;
-
-
-    // leemos dos numeros (rows y seats);
-    // determinamos precio ticket => seats <= 60 then price = $10;
-    // if seats > 60 then:
-    // seating / 2 => front rows price =  $10, back rows price = $8;
-    // calculate income frontSeats * 10 + backSeats * 8 = income;
+    private SeatingArrangement seatingArrangement;
 
     public Cinema(){
         this.inputHelper = new InputHelper();
     }
 
+    public void buyTicket(){
+        int rowNumber = inputHelper.getInt("Enter a row number:");
+        int seatNumber = inputHelper.getInt("Enter a seat number in that row:");
+        seatingArrangement.bookSeat(rowNumber, seatNumber);
+        seatingArrangement.calculateSeatPrice(rowNumber, seatNumber);
+    }
 
+    public void showSeats(){
+        System.out.println(seatingArrangement);
+        seatingArrangement.printArrangement();
+    }
 
+    public void showMenu(){
+        int chosenOption;
+        String menu = String.join("\n", "1. Show the seats", "2. Buy a ticket", "0. Exit" );
+        int option = inputHelper.getInt(menu);
+
+        while(option != 1 && option != 2 && option != 3){
+            option = inputHelper.getInt(menu); 
+        }
+
+        switch(option){
+            case 1:
+               showSeats();
+                break;
+            case 2:
+                buyTicket();
+                break;
+        }
+    }
 
     public static void main(String[] args) {
         // Write your code here
         Cinema cinema = new Cinema();
         int rows = cinema.inputHelper.getInt("Enter the number of rows:");
         int seats = cinema.inputHelper.getInt("Enter the number of seats in each row:");
-        SeatingArrangement seatingArrangement = new SeatingArrangement(rows, seats);
-        seatingArrangement.calculateSeatingProfit();
-
+         cinema.seatingArrangement = new SeatingArrangement(rows, seats);
+        cinema.showMenu();
     }
 }
